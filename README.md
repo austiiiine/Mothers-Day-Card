@@ -1,6 +1,6 @@
 # Mother's Day Interactive Card 💌
 
-> ✨ This project is adapted from the original [Image Changer Pop-up Tutorial](https://github.com/nasha-wanich/beginner-tutorial) by [nasha-wanich](https://github.com/nasha-wanich).  
+> This project is adapted from the original [Image Changer Pop-up Tutorial](https://github.com/nasha-wanich/beginner-tutorial) by [nasha-wanich](https://github.com/nasha-wanich).  
 > I customized the theme, layout, colors, and interactions to transform it into a Mother's Day card experience.
 
 
@@ -18,7 +18,7 @@ This interactive card is a single-page web project that lets users:
 - Button interactions redesigned with gradient hover animations
 - Final state adds reset functionality and a hidden card reveal option
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 Original base project by  
 **[nasha-wanich](https://github.com/nasha-wanich)** – [beginner-tutorial](https://github.com/nasha-wanich/beginner-tutorial)
