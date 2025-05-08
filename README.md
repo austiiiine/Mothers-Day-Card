@@ -3,7 +3,6 @@
 > ✨ This project is adapted from the original [Image Changer Pop-up Tutorial](https://github.com/nasha-wanich/beginner-tutorial) by [nasha-wanich](https://github.com/nasha-wanich).  
 > I customized the theme, layout, colors, and interactions to transform it into a Mother's Day card experience.
 
----
 
 ## Overview
 
