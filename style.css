@@ -14,6 +14,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'FakePearl';
+  src: url('./assets/fonts/FakePearl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Customization Variables */
 :root {
     /* Colors */
@@ -251,6 +258,71 @@
     color: var(--color-inner-container-background);
   }
 
+  /* Card Overlay */
+
+  .card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .card-popup {
+    position: relative;
+    background: var(--color-inner-container-background);
+    border: var(--border-width-main) solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 40px 80px;
+    max-width: 90%;
+    width: 640px;
+    text-align: start;
+    position: relative;
+  }
+
+  .card-overlay.show .card-popup {
+
+  }
+
+  .card-content p {
+    margin-bottom: 10px;
+    color: var(--color-border);
+    font-family: 'FakePearl', sans-serif;
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+
+  .card-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .popup-deco {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+    pointer-events: none;
+  }
+  
+  .close-button {
+    all: unset;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--color-border);
+  }
+  
+  .card-content p {
+    margin: 0 0 1em 0;
+  }
   
   /* Responsive Styles for Mobile */
   @media (max-width: 768px) {

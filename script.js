@@ -23,13 +23,15 @@ const finalSection = document.querySelector('.final-section');
 const resetButton = document.getElementById('reset-button');
 const cardButton = document.getElementById('card-button');
 
-// =============================================
 // Progress bar elements
-// =============================================
 const levelLabel = document.getElementById('level-label');
 const barFill = document.getElementById('bar-fill');
 
-// 等級對應圖像順序
+// Overlay
+const overlay = document.getElementById('card-overlay');
+const closeCardButton = document.getElementById('close-card');
+
+// Levels correspond to image order
 const levels = [0, 3, 8, 16, 20, 21];
 
 // =============================================
@@ -106,5 +108,22 @@ resetButton.addEventListener('click', () => {
 
 // Placeholder for card button
 cardButton.addEventListener('click', () => {
-  alert("敬請期待 ✉️ 我會送出一張母親節卡片！");
+  overlay.style.display = 'flex';
+  overlay.classList.add('show');
+});
+
+closeCardButton.addEventListener('click', () => {
+  overlay.classList.remove('show');
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 400);
+});
+
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) {
+    overlay.classList.remove('show');
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 400);
+  }
 });
