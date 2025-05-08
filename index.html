@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- CUSTOMIZE: Change the page title -->
-  <title>For you &lt;3</title>
+  <title>Happy Mother's Day &lt;3</title>
   
   <!-- CUSTOMIZE: Update the favicon path/filename as needed -->
-  <link rel="icon" type="image/png" href="./assets/favicon.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" sizes="32x32">
   
   <!-- Link to your stylesheet - don't change unless you rename style.css -->
   <link rel="stylesheet" href="style.css">
@@ -22,20 +22,45 @@
       <h1>任務提示：養大這個小屁孩！</h1>
     </header>
 
+    <div class="level-bar">
+      <span id="level-label">Lv.0</span>
+      <div class="bar-container">
+        <div class="bar-fill" id="bar-fill"></div>
+      </div>
+    </div>
+
     <div class="image-content"></div>
 
     <div class="button-group">
-      <button class="image-button">餵食</button>
-      <button class="image-button">照顧</button>
-      <button class="image-button">玩推手掌</button>
+      <button class="image-button">
+        <img src="./assets/icons/apple.png" alt="餵食 icon" class="button-icon">
+        餵食
+      </button>
+      <button class="image-button">
+        <img src="./assets/icons/heart.png" alt="照顧 icon" class="button-icon">
+        照顧
+      </button>
+      <button class="image-button">
+        <img src="./assets/icons/push.png" alt="推首長 icon" class="button-icon">
+        玩推手掌
+      </button>
     </div>
 
-    <div class="final-message">Happy Mother's Day!</div>
-  </div>
+    <div class="final-section">
+      <div class="final-message">Happy Mother's Day!</div>
+      <div class="end-buttons">
+        <button id="card-button" class="end-button">
+          <img src="./assets/icons/envelope.png" alt="信封 icon" class="button-icon">
+          查收卡片
+        </button>
+        <button id="reset-button" class="end-button">
+          <img src="./assets/icons/replay.png" alt="重來 icon" class="button-icon">
+          再玩一次
+        </button>
+      </div>
+    </div>
 
-  
 
-  <!-- Link to your JavaScript - don't change unless you rename index.js -->
-  <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -16,9 +16,21 @@ const images = [
 // STEP 2: Reference HTML elements 
 // =============================================
 // Connect to the elements we need to change
+const headerText = document.querySelector('h1');
 const imageContent = document.querySelector('.image-content');  // Image container
 const allButtons = document.querySelectorAll('.image-button');   // Image switch button
-const finalMessage = document.querySelector('.final-message');  // Final message
+const finalSection = document.querySelector('.final-section');
+const resetButton = document.getElementById('reset-button');
+const cardButton = document.getElementById('card-button');
+
+// =============================================
+// Progress bar elements
+// =============================================
+const levelLabel = document.getElementById('level-label');
+const barFill = document.getElementById('bar-fill');
+
+// 等級對應圖像順序
+const levels = [0, 3, 8, 16, 20, 21];
 
 // =============================================
 // STEP 3: Track what image we're at 
@@ -46,6 +58,15 @@ function updateImage() {
     // Fade in new image
     imageContent.style.opacity = 1;
   };
+
+  // 更新等級
+  levelLabel.textContent = `Lv.${levels[currentIndex]}`;
+  const percent = (currentIndex + 1) / images.length * 100;
+  barFill.style.width = `${percent}%`;
+
+  if (currentIndex === 0) {
+    finalSection.style.display = 'none';
+  }
 }
 
 // =============================================
@@ -64,11 +85,26 @@ allButtons.forEach(button => {
 
     if (currentIndex < images.length) {
       updateImage();
-    }
 
-    if (currentIndex === images.length - 1) {
-      allButtons.forEach(btn => btn.style.display = 'none');
-      finalMessage.style.display = 'block';
+      if (currentIndex === images.length - 1) {
+        allButtons.forEach(btn => btn.style.display = 'none');
+        finalSection.style.display = 'flex';
+        headerText.textContent = '\\ 任務完成！ /';
+      }
     }
   });
+});
+
+resetButton.addEventListener('click', () => {
+  currentIndex = 0;
+  updateImage();
+
+  allButtons.forEach(btn => btn.style.display = 'inline-flex');
+  finalSection.style.display = 'none';
+  headerText.textContent = '任務提示：養大這個小屁孩！';
+});
+
+// Placeholder for card button
+cardButton.addEventListener('click', () => {
+  alert("敬請期待 ✉️ 我會送出一張母親節卡片！");
 });
