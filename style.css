@@ -38,7 +38,7 @@
 /* fonts */
 --font-family-main: 'BoutiqueBitmap', sans-serif;
 --font-size-large: 28px;
---font-size-medium: 24px;
+--font-size-medium: 22px;
 
 /* border radius */
 --border-radius: 0.31269rem;
@@ -269,6 +269,8 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card-popup {
@@ -291,7 +293,7 @@ header {
   margin-bottom: 10px;
   color: var(--color-border);
   font-family: 'FakePearl', sans-serif;
-  font-size: 24px;
+  font-size: var(--font-size-medium);
   line-height: 1.5em;
 }
 
@@ -312,7 +314,7 @@ header {
   all: unset;
   position: absolute;
   top: 12px;
-  left: 20px;
+  right: 20px;
   font-size: 28px;
   cursor: pointer;
   color: var(--color-border);
@@ -325,7 +327,7 @@ header {
 .floating-text {
   position: absolute;
   font-family: var(--font-family-main);
-  font-size: 24px;
+  font-size: var(--font-size-medium);
   color: var(--color-border);
   animation: floatUpFade 1s ease-out forwards;
   pointer-events: none;
@@ -345,16 +347,75 @@ header {
 
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
-  body {
-    background-size: cover;
-    background-position: bottom center;
+  :root {
+    font-size: 16px;
   }
 
   .container {
-    margin: 1rem;
+    width: 90vw;
+    padding: 1rem;
+  }
+
+  .level-bar {
+    font-size: 1.3rem;
+    width: 100%;
+    max-width: 270px;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .bar-container {
+    width: 100%;
   }
 
   h1 {
-    font-size: calc(var(--font-size-large) - 0.25rem);
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .image-button,
+  .end-button {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  .button-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button-group,
+  .end-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .image-content {
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .card-popup {
+    width: 90%;
+    padding: 24px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .popup-deco {
+    width: 50px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .close-button {
+    font-size: 24px;
+    top: 10px;
+    right: 14px;
   }
 }
