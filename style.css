@@ -282,11 +282,6 @@ header {
   max-width: 90%;
   width: 640px;
   text-align: start;
-  position: relative;
-}
-
-.card-overlay.show .card-popup {
-
 }
 
 .card-content p {
@@ -318,10 +313,6 @@ header {
   font-size: 28px;
   cursor: pointer;
   color: var(--color-border);
-}
-
-.card-content p {
-  margin: 0 0 1em 0;
 }
 
 .floating-text {
