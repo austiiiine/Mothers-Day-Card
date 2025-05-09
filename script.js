@@ -12,38 +12,25 @@ const images = [
   './assets/image-content/image-6.png'
 ];
 
-// =============================================
-// STEP 2: Reference HTML elements 
-// =============================================
-// Connect to the elements we need to change
+// references to HTML elements 
 const headerText = document.querySelector('h1');
-const imageContent = document.querySelector('.image-content');  // Image container
-const allButtons = document.querySelectorAll('.image-button');   // Image switch button
+const imageContent = document.querySelector('.image-content');
+const mainButtons = document.querySelectorAll('.image-button');
 const finalSection = document.querySelector('.final-section');
 const resetButton = document.getElementById('reset-button');
 const cardButton = document.getElementById('card-button');
-
-// Progress bar elements
 const levelLabel = document.getElementById('level-label');
 const barFill = document.getElementById('bar-fill');
-
-// Overlay
 const overlay = document.getElementById('card-overlay');
 const closeCardButton = document.getElementById('close-card');
 
-// Levels correspond to image order
+// levels correspond to image order
 const levels = [0, 3, 8, 16, 20, 21];
 
-// =============================================
-// STEP 3: Track what image we're at 
-// =============================================
-// Start with the first image (index 0)
+// image index tracker
 let currentIndex = 0;
 
-// =============================================
-// STEP 4: Update image function 
-// =============================================
-// Function to change images with fade effect
+// image update
 function updateImage() {
   // Fade out current image
   imageContent.style.opacity = 0;
@@ -61,7 +48,7 @@ function updateImage() {
     imageContent.style.opacity = 1;
   };
 
-  // 更新等級
+  // update lvl
   levelLabel.textContent = `Lv.${levels[currentIndex]}`;
   const percent = (currentIndex + 1) / images.length * 100;
   barFill.style.width = `${percent}%`;
@@ -71,17 +58,14 @@ function updateImage() {
   }
 }
 
-// =============================================
-// STEP 5: Initial image display 
-// =============================================
-// Show first image when page loads
+// initial image display
 updateImage();
 
-// =============================================
-// STEP 6: Button click handler 
-// =============================================
-// Change image when button is clicked
-allButtons.forEach(button => {
+
+// button click handlers
+
+// main buttons - change image when button is clicked
+mainButtons.forEach(button => {
   button.addEventListener('click', () => {
     currentIndex++;
 
@@ -89,7 +73,7 @@ allButtons.forEach(button => {
       updateImage();
 
       if (currentIndex === images.length - 1) {
-        allButtons.forEach(btn => btn.style.display = 'none');
+        mainButtons.forEach(btn => btn.style.display = 'none');
         finalSection.style.display = 'flex';
         headerText.textContent = '\\ 任務完成！ /';
       }
@@ -97,16 +81,17 @@ allButtons.forEach(button => {
   });
 });
 
+// reset button
 resetButton.addEventListener('click', () => {
   currentIndex = 0;
   updateImage();
 
-  allButtons.forEach(btn => btn.style.display = 'inline-flex');
+  mainButtons.forEach(btn => btn.style.display = 'inline-flex');
   finalSection.style.display = 'none';
   headerText.textContent = '任務提示：養大這個小屁孩！';
 });
 
-// Placeholder for card button
+// card button
 cardButton.addEventListener('click', () => {
   overlay.style.display = 'flex';
   overlay.classList.add('show');
